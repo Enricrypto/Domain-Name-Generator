@@ -9,6 +9,7 @@ window.onload = function () {
   let pronoun = ["the", "our"];
   let adjective = ["great", "big"];
   let noun = ["jogger", "racoon"];
+  let extension = ["com", "net", "us", "io"]
 
   const domainName = () => {
     const domain = document.querySelector("#domain-name");
@@ -18,7 +19,9 @@ window.onload = function () {
     pronoun.forEach((pron) => {
       adjective.forEach((adj) => {
         noun.forEach((n) => {
-          print += `<div>${counter++}.${pron}${adj}${n}.com</div>`;
+          extension.forEach((ext) => {
+            print += `<div>${counter++}.${pron}${adj}${n}.${ext}</div>`;
+          }); 
         });
       });
     });
